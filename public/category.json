@@ -1,0 +1,17 @@
+[
+  {
+    "cid": "1",
+    "name": "Samsung",
+    "images": "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/04/28/971857-samsung-galaxy-book-pro360-1024x576.jpg"
+  },
+  {
+    "cid": "2",
+    "name": "Lenovo",
+    "images": "https://cdn.arstechnica.net/wp-content/uploads/2016/12/yogabook7-760x380.jpg"
+  },
+  {
+    "cid": "3",
+    "name": "MackBook",
+    "images": "https://photos5.appleinsider.com/gallery/40575-78549-13-inch-MacBook-Air-apps-xl.jpg"
+  }
+]
