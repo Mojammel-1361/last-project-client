@@ -1,11 +1,16 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const CategoryDetails = () => {
-    return (
-      <div>
-        <p>Category Details</p>
-      </div>
-    );
+
+    const {data} = useLoaderData();
+    console.log(data)
+
+  return (
+    <div>
+      <p>Category Details {data}</p>
+    </div>
+  );
 };
 
 export default CategoryDetails;

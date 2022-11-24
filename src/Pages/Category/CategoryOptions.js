@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const CategoryOptions = ({ category }) => {
     const { name, images } = category;
   return (
@@ -12,8 +13,9 @@ const CategoryOptions = ({ category }) => {
         <h2 className="card-title">{name}</h2>
 
         <div className="card-actions justify-end">
-          <Link to="/CategoryDetails" className="btn btn-primary btn-sm">
+          <Link to="/CategoryDetails/:cid" className="btn btn-primary btn-sm">
             Details
+            
           </Link>
         </div>
       </div>

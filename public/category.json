@@ -2,13 +2,21 @@
   {
     "cid": "1",
     "name": "Samsung",
-    "images": "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/04/28/971857-samsung-galaxy-book-pro360-1024x576.jpg"
+    "images": "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/04/28/971857-samsung-galaxy-book-pro360-1024x576.jpg",
+    "product-name": "Samsung-notebook",
+    "product-img": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/Samsung_Notebook_Flash_launches_in_South_Korea_October_2018.jpg",
+    "price": "500",
+    "location": "Gazipur"
   },
+
+
   {
     "cid": "2",
     "name": "Lenovo",
     "images": "https://cdn.arstechnica.net/wp-content/uploads/2016/12/yogabook7-760x380.jpg"
   },
+
+
   {
     "cid": "3",
     "name": "MackBook",
