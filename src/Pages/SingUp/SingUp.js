@@ -1,21 +1,35 @@
 import React from 'react';
-
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
+const SingUp = () => {
+    const {
+      register,
+      formState: { errors },
+      handleSubmit,
+    } = useForm();
 
-const Login = () => {
-    const { register,formState: { errors }, handleSubmit } = useForm();
-    
-    const handleLogin = data =>{
-        console.log(data);
-    }
-
+    const handleSingUp = (data) => {
+      console.log(data);
+    };
     return (
       <div className=" h-[800px] flex justify-center items-center">
         <div className="w-96 p-6">
-          <h1 className="text-xl">Login</h1>
-          <form onSubmit={handleSubmit(handleLogin)}>
+          <h1 className="text-xl">SingUp Page</h1>
+
+          <form onSubmit={handleSubmit(handleSingUp)}>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+
+              <input
+                type="text"
+                {...register("name")}
+                className="input input-bordered w-full "
+              />
+            </div>
+
             <div className="form-control w-full">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -33,6 +47,21 @@ const Login = () => {
                   {errors.email?.message}
                 </p>
               )}
+            </div>
+
+            <div className="form-control w-full">
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text">Select the options</span>
+                </label>
+                <select
+                  className="select select-bordered"
+                  {...register("type")}
+                >
+                  <option>Seller</option>
+                  <option>Buyer</option>
+                </select>
+              </div>
             </div>
 
             <div className="form-control w-full">
@@ -65,8 +94,8 @@ const Login = () => {
           </form>
           <p>
             New to this web side{" "}
-            <Link className="text-primary" to="/signup">
-              Create a new account
+            <Link className="text-primary" to="/login">
+              Have a account
             </Link>{" "}
           </p>
           <div className="divider">OR</div>
@@ -78,4 +107,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SingUp;

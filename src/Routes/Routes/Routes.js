@@ -5,6 +5,7 @@ import CategoryDetails from "../../Pages/CategoryDetails/CategoryDetails";
 
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import SingUp from "../../Pages/SingUp/SingUp";
 
 const router = createBrowserRouter([
   {
@@ -20,13 +21,17 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: "/signup",
+        element: <SingUp></SingUp>,
+      },
+      {
         path: "/blog",
         element: <Blog></Blog>,
       },
       {
         path: "/categorydetails/:cid",
         element: <CategoryDetails></CategoryDetails>,
-        loader: ({params}) => fetch('category.json'),
+        loader: ({ params }) => fetch("category.json"),
       },
     ],
   },
