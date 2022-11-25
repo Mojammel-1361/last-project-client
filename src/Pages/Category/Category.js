@@ -20,7 +20,7 @@ const Category = () => {
         <div className=" mt-6 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {categorys.map((category) => (
             <CategoryOptions
-              key={category.cid}
+              key={category.id}
               category={category}
               setOptions={setOptions}
             ></CategoryOptions>

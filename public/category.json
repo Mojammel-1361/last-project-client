@@ -1,25 +1,103 @@
 [
   {
-    "cid": "1",
+    "id": "1",
     "name": "Samsung",
     "images": "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/04/28/971857-samsung-galaxy-book-pro360-1024x576.jpg",
-    "product-name": "Samsung-notebook",
-    "product-img": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/Samsung_Notebook_Flash_launches_in_South_Korea_October_2018.jpg",
-    "price": "500",
-    "location": "Gazipur"
+    "details": [
+      {
+        "product": "Samsung TG874",
+        "location": "Dhaka",
+        "price": "15000",
+        "use": "1",
+        "title": "ADM Ryzen 5 3rd Gen Quad Core, 8 GB DDR4 RAM 512 GB SSD Radeon Vega 8 Graphics14 inches, 1920 x 1080 pixels Windows 10 OS",
+        "img": "https://www.ubuy.com.bd/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvODEyeXFKc0xySUwuX0FDX1NMMTUwMF8uanBn.jpg"
+      },
+      {
+        "product": "Samsung Tx874gTX",
+        "location": "Gazipur",
+        "price": "25400",
+        "use": "2",
+        "title": "Intel Core i7 8th Gen Quad Core, 1.8 GHz Clock Speed 8 GB RAM 512 GB Hard Disk Intel UHD Graphics 620 13.3 inches, 1920 x 1080 pixels Windows 10 OS",
+
+        "img": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6180/6180101_sd.jpg"
+      },
+      {
+        "product": "Samsung Notbook 9",
+        "location": "Tongi",
+        "price": "15400",
+        "use": "1.5",
+        "title": "Intel Core i5 9th Gen Quad Core, 2.4 GHz Clock Speed 8 GB RAM 512 GB SSD 4 GB NVIDIA Graphics Card 17.3 inches, 1920 x 1080 pixels Windows 10 OS",
+
+        "img": "https://images.samsung.com/is/image/samsung/assets/us/computing/galaxybooks/03152022/pcd-amoled-m.jpg?$624_N_JPG$"
+      }
+    ]
   },
 
-
   {
-    "cid": "2",
+    "id": "2",
     "name": "Lenovo",
-    "images": "https://cdn.arstechnica.net/wp-content/uploads/2016/12/yogabook7-760x380.jpg"
+    "images": "https://cdn.arstechnica.net/wp-content/uploads/2016/12/yogabook7-760x380.jpg",
+    "details": [
+      {
+        "product": "Lenovo TG874",
+        "location": "Rangpur",
+        "price": "14400",
+        "use": "4",
+        "title": "ADM Ryzen 5 3rd Gen Quad Core, 8 GB DDR4 RAM 512 GB SSD Radeon Vega 8 Graphics14 inches, 1920 x 1080 pixels Windows 10 OS",
+        "img": "https://static.lenovo.com/na/subseries/hero/lenovo-laptop-yoga-c940-hero-15-3yr-support.png"
+      },
+      {
+        "product": "Lenovo TG224xt",
+        "location": "Gazipur",
+        "price": "28400",
+        "use": "2.1",
+        "title": "Intel Core i7 8th Gen Quad Core, 1.8 GHz Clock Speed 8 GB RAM 512 GB Hard Disk Intel UHD Graphics 620 13.3 inches, 1920 x 1080 pixels Windows 10 OS",
+
+        "img": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/1/9/288ce589-d397-4ce3-ba77-618934537868.jpg"
+      },
+      {
+        "product": "Lenovo TG122FF",
+        "location": "Mirpur",
+        "price": "12400",
+        "use": "1.5",
+        "title": "Intel Core i5 9th Gen Quad Core, 2.4 GHz Clock Speed 8 GB RAM 512 GB SSD 4 GB NVIDIA Graphics Card 17.3 inches, 1920 x 1080 pixels Windows 10 OS",
+
+        "img": "https://www.lenovo.com/medias/?context=bWFzdGVyfHJvb3R8NTk4MTQ2fGltYWdlL3BuZ3xoMjEvaDM5LzE0MzIyNzQ2NTU2NDQ2LnBuZ3xjZGVjZTRiZjY0YTg5MDM1Y2E3NWQ0YWYxNDZiYzY3OTBiOTc4MDNhOGVkOGI3OTI1NzIwYjZiNDUzYzgxMGNi"
+      }
+    ]
   },
 
-
   {
-    "cid": "3",
+    "id": "3",
     "name": "MackBook",
-    "images": "https://photos5.appleinsider.com/gallery/40575-78549-13-inch-MacBook-Air-apps-xl.jpg"
+    "images": "https://photos5.appleinsider.com/gallery/40575-78549-13-inch-MacBook-Air-apps-xl.jpg",
+    "details": [
+      {
+        "product": "Mackbook Pro",
+        "location": "Rangpur",
+        "price": "14400",
+        "use": "4",
+        "title": "RAM - 8GB Storage - 512GB SSD Generation Processor Type - Apple M2 Chip Display Size (Inch) - 13.6 Generation - Not Applicable",
+        "img": "https://photos5.appleinsider.com/gallery/45240-88149-The-new-MacBook-Pro-16-inch-xl.jpg"
+      },
+      {
+        "product": "Mackbook Air",
+        "location": "Gazipur",
+        "price": "28400",
+        "use": "2.1",
+        "title": "RAM - 16GB Storage - 512GB SSD Generation Processor Type - Apple M2 Chip Display Size (Inch) - 14.6 Generation - Not Applicable",
+
+        "img": "https://i.pcmag.com/imagery/reviews/0227QDT3xYwn3xEOpyiJpNU-13.jpg"
+      },
+      {
+        "product": "Mackbook Air M2",
+        "location": "Mirpur-10",
+        "price": "12400",
+        "use": "2.5",
+        "title": "RAM - 32GB Storage - 256GB SSD Generation Processor Type - Apple M2 Chip Display Size (Inch) - 14.6 Generation - Not Applicable",
+
+        "img": "https://www.digitaltrends.com/wp-content/uploads/2021/11/macbook-pro-2021-01.jpg?resize=625%2C417&p=1"
+      }
+    ]
   }
 ]
