@@ -21,6 +21,7 @@ const Navbar = () => {
         <li>
           <Link to="/blog">Blog</Link>
         </li>
+        
         {user?.uid ? (
           <>
             <li>
