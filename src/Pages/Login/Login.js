@@ -1,15 +1,52 @@
-import React from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
+
 
 
 const Login = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
+    const { LoginUser} = useContext(AuthContext);
+   
+    const [loginError, setLoginError] = useState('');
     
-    const handleLogin = data =>{
-        console.log(data);
-    }
+    const { googleLogin } = useContext(AuthContext);
+     const provider = new GoogleAuthProvider();
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.form?.pathname || '/';
+
+      const handleGoogle = () => {
+        googleLogin(provider)
+          .then((result) => {
+            const user = result.user;
+            console.log(user);
+            navigate('/')
+            // setLoginUserEmail(user.email);
+          })
+          .catch((err) => console.error(err));
+      };
+
+     const handleLogin = (data) => {
+       console.log(data);
+       setLoginError('');
+       LoginUser(data.email, data.password)
+         .then((result) => {
+           const user = result.user;
+           console.log(user);
+           navigate(from, {replace: true})
+         })
+         .catch((error) => {
+          
+           console.log(error.message)
+           setLoginError(error.message);
+         });
+     };
 
     return (
       <div className=" h-[800px] flex justify-center items-center">
@@ -62,6 +99,9 @@ const Login = () => {
               value="Login"
               type="submit"
             />
+            <div>
+              {loginError && <p className="text-red-500">{loginError}</p>}
+            </div>
           </form>
           <p>
             New to this web side{" "}
@@ -70,7 +110,10 @@ const Login = () => {
             </Link>{" "}
           </p>
           <div className="divider">OR</div>
-          <button className="btn btn-outline btn-success w-full">
+          <button
+            onClick={handleGoogle}
+            className="btn btn-outline btn-success w-full"
+          >
             Login with Google
           </button>
         </div>

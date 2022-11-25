@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from '../../Context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const SingUp = () => {
     const {
@@ -9,9 +11,33 @@ const SingUp = () => {
       handleSubmit,
     } = useForm();
 
+    const { createUser, updateUser } = useContext(AuthContext);
+    const[signUpError, setSignUpError] = useState('')
+
     const handleSingUp = (data) => {
-      console.log(data);
+      setSignUpError('');
+      createUser(data.email, data.password)
+      .then(result =>{
+        const user = result.user;
+        console.log(user);
+        toast.success('user created successfully')
+
+        const userInfo = {
+          displayName: data.name,
+        };
+
+        updateUser(userInfo)
+          .then(() => {})
+          .catch((error) => console.error(error));
+      })
+      .catch(error => {
+        
+        console.log(error)
+        setSignUpError(error.message)
+      });
     };
+
+
     return (
       <div className=" h-[800px] flex justify-center items-center">
         <div className="w-96 p-6">
@@ -64,7 +90,7 @@ const SingUp = () => {
               </div>
             </div>
 
-            <div className="form-control w-full">
+            <div className="form-control w-full mb-6">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
@@ -81,27 +107,23 @@ const SingUp = () => {
                   {errors.password?.message}
                 </p>
               )}
-              <label className="label">
-                <span className="label-text">Forget Password</span>
-              </label>
             </div>
 
             <input
               className="btn btn-primary  w-full p-6"
-              value="Login"
+              value="Sing Up"
               type="submit"
             />
+            {signUpError && <p className="text-red-500">{signUpError}</p>}
           </form>
+
           <p>
             New to this web side{" "}
             <Link className="text-primary" to="/login">
               Have a account
             </Link>{" "}
           </p>
-          <div className="divider">OR</div>
-          <button className="btn btn-outline btn-success w-full">
-            Login with Google
-          </button>
+          
         </div>
       </div>
     );
