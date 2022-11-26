@@ -10,6 +10,7 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import CategoryItems from "../../Pages/CategoryItems/CategoryItems";
 import LayoutDashboard from '../../Layout/LayoutDashboard/LayoutDashboard';
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
+import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 
 
 
@@ -52,11 +53,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
       },
       {
         path: "/dashboard/myproducts",
-        element: <MyProducts></MyProducts>
+        element: <MyProducts></MyProducts>,
+      },
+      {
+        path: "/dashboard/allUsers",
+        element: <AllUsers></AllUsers>,
       },
     ],
   },

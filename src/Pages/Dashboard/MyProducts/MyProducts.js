@@ -41,7 +41,7 @@ const MyProducts = () => {
                   </th>
                   <td>{addCard.product}</td>
                   <td>{addCard.price}</td>
-                  <td>{addCard.use}</td>
+                  <td>{addCard.use} Year</td>
                   <td>{addCard.location}</td>
                   
                 </tr>
