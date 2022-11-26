@@ -20,7 +20,9 @@ const CategoryItems = () => {
         ))}
         {
         items && 
-        <Modal items={items}
+        <Modal 
+        items={items}
+        setItems={setItems}
         ></Modal>
         }
       </div>

@@ -8,6 +8,8 @@ import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SingUp/SingUp";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import CategoryItems from "../../Pages/CategoryItems/CategoryItems";
+import LayoutDashboard from '../../Layout/LayoutDashboard/LayoutDashboard';
+import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 
 
 
@@ -35,7 +37,8 @@ const router = createBrowserRouter([
       {
         path: "/categoryItems/:id",
         element: <CategoryItems></CategoryItems>,
-        loader: ({ params }) => fetch(`http://localhost:5000/categoryOptions/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/categoryOptions/${params.id}`),
       },
     ],
   },
@@ -43,9 +46,19 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRoutes>
-        <Dashboard></Dashboard>
+        <LayoutDashboard></LayoutDashboard>
       </PrivateRoutes>
     ),
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>
+      },
+      {
+        path: "/dashboard/myproducts",
+        element: <MyProducts></MyProducts>
+      },
+    ],
   },
   {
     path: "*",

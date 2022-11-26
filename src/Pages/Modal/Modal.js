@@ -1,7 +1,31 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 
-const Modal = ({ items }) => {
-    const { location, title, product, price, use, img } = items;
+
+const Modal = ({ items, setItems }) => {
+    const { title, location, product, price, use, img } = items;
+
+    const handelAdd = () =>{
+      
+      
+
+
+      const addCard = { location, title, product, price, use, img };
+      
+      fetch("http://localhost:5000/addCards", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(addCard)
+      })
+      .then(res => res.json())
+      .then(data =>{
+        console.log(data);
+        setItems(null);
+        toast.success('product add Card')
+      })
+    }
     
   return (
     <>
@@ -25,7 +49,10 @@ const Modal = ({ items }) => {
           </p>
           <div className="modal-action">
             <label htmlFor="product-views" className="btn btn-primary btn-sm">
-              X
+              Back
+            </label>
+            <label onClick={handelAdd} className="btn btn-primary btn-sm">
+              Add Card
             </label>
           </div>
         </div>
