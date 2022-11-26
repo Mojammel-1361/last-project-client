@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../Context/AuthProvider';
 import { toast } from 'react-hot-toast';
+
 
 const SingUp = () => {
     const {
@@ -13,13 +14,15 @@ const SingUp = () => {
 
     const { createUser, updateUser } = useContext(AuthContext);
     const[signUpError, setSignUpError] = useState('')
+    const navigate = useNavigate();
 
     const handleSingUp = (data) => {
       setSignUpError('');
       createUser(data.email, data.password)
       .then(result =>{
         const user = result.user;
-        console.log(user);
+        console.log(user)
+        navigate('/');
         toast.success('user created successfully')
 
         const userInfo = {
