@@ -14,6 +14,7 @@ import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import ManageProduct from "../../Pages/Dashboard/ManageProduct/ManageProduct";
+import SellerRoutes from "../SellerRoutes/SellerRoutes";
 // import BuyerRoutes from "../BuyerRoutes/BuyerRoutes";
 
 
@@ -66,9 +67,9 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/addProduct",
         element: (
-          <AdminRoutes>
+          <SellerRoutes>
             <AddProduct></AddProduct>
-          </AdminRoutes>
+          </SellerRoutes>
         ),
       },
       {
@@ -82,9 +83,9 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/ManageProduct",
         element: (
-          <AdminRoutes>
-           <ManageProduct></ManageProduct>
-          </AdminRoutes>
+          <SellerRoutes>
+            <ManageProduct></ManageProduct>
+          </SellerRoutes>
         ),
       },
     ],

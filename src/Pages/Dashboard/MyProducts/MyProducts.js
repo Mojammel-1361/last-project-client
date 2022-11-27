@@ -33,6 +33,7 @@ const MyProducts = () => {
                 <th>Uses</th>
                 <th>mobile</th>
                 <th>Location</th>
+                <th>Pay Now</th>
               </tr>
             </thead>
             <tbody>
@@ -44,12 +45,20 @@ const MyProducts = () => {
                       <img src={addCard.img} alt="" />
                     </div>
                   </th>
-                  
+
                   <td>{addCard.product}</td>
                   <td>{addCard.price}</td>
                   <td>{addCard.use} Year</td>
                   <td>{addCard.phone}</td>
                   <td>{addCard.location}</td>
+                  <td>
+                    {addCard.price && !addCard.paid && (
+                      <button className="btn btn-accent">pay</button>
+                    )}
+                    {addCard.price && addCard.paid && (
+                      <span className="text-accent">paid</span>
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>
