@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const MyProducts = () => {
-
-    const url = "http://localhost:5000/addCards";
+  const {user} = useContext(AuthContext);
+    const url = `http://localhost:5000/addCards?email=${user?.email}`;
 
     const { data: addCards =[] } = useQuery({
         queryKey: ['addCards'],
@@ -23,11 +24,11 @@ const MyProducts = () => {
               <tr>
                 <th></th>
                 <th>images</th>
+                <th>Name</th>
                 <th>Product</th>
                 <th>Price</th>
                 <th>Uses</th>
                 <th>Location</th>
-                
               </tr>
             </thead>
             <tbody>
@@ -39,11 +40,11 @@ const MyProducts = () => {
                       <img src={addCard.img} alt="" />
                     </div>
                   </th>
+                  <td>{addCard.name}</td>
                   <td>{addCard.product}</td>
                   <td>{addCard.price}</td>
                   <td>{addCard.use} Year</td>
                   <td>{addCard.location}</td>
-                  
                 </tr>
               ))}
             </tbody>

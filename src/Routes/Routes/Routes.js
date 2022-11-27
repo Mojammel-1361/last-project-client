@@ -11,6 +11,7 @@ import CategoryItems from "../../Pages/CategoryItems/CategoryItems";
 import LayoutDashboard from '../../Layout/LayoutDashboard/LayoutDashboard';
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
+import AdminRoutes from "../AdminRoutes/AdminRoutes";
 
 
 
@@ -61,7 +62,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/allUsers",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoutes>
+            <AllUsers></AllUsers>
+          </AdminRoutes>
+        ),
       },
     ],
   },

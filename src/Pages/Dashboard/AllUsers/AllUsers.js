@@ -20,17 +20,24 @@ const AllUsers = () => {
               <tr>
                 <th></th>
                 <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
+                <th>Email</th>
+                <th>Type</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
               {users.map((user, i) => (
                 <tr key={i}>
-                  <th>{i+1}</th>
+                  <th>{i + 1}</th>
                   <td>{user.name}</td>
-                  <td>Quality Control Specialist</td>
-                  <td> <button className='btn btn-sm btn-primary' type="">admin</button> </td>
+                  <td>{user.email}</td>
+                  <td className="text-blue-600">{user.role}</td>
+                  <td>
+                    {" "}
+                    <button className="btn btn-sm btn-error" type="">
+                      Delete
+                    </button>{" "}
+                  </td>
                 </tr>
               ))}
             </tbody>
