@@ -30,7 +30,7 @@ const AllUsers = () => {
                   <th>{i+1}</th>
                   <td>{user.name}</td>
                   <td>Quality Control Specialist</td>
-                  <td>Blue</td>
+                  <td> <button className='btn btn-sm btn-primary' type="">admin</button> </td>
                 </tr>
               ))}
             </tbody>

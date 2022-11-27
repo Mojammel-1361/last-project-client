@@ -35,7 +35,7 @@ const MyProducts = () => {
                 <tr key={i}>
                   <th>{i + 1}</th>
                   <th>
-                    <div class="w-24 rounded">
+                    <div className="w-24 rounded">
                       <img src={addCard.img} alt="" />
                     </div>
                   </th>

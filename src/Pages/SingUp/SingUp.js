@@ -40,7 +40,7 @@ const SingUp = () => {
 
         updateUser(userInfo)
           .then(() => {
-            saveUser(data.name, data.email);
+            saveUser(data.name, data.email, data.role);
           })
           .catch((error) => console.error(error));
       })
@@ -51,8 +51,8 @@ const SingUp = () => {
       });
     };
 
-    const saveUser = (name, email) =>{
-      const user ={name,  email};
+    const saveUser = (name, email, role) =>{
+      const user ={name,  email, role};
       fetch("http://localhost:5000/users",{
         method: 'POST',
         headers:{
@@ -113,7 +113,7 @@ const SingUp = () => {
                 </label>
                 <select
                   className="select select-bordered"
-                  {...register("type")}
+                  {...register("role")}
                 >
                   <option>Seller</option>
                   <option>Buyer</option>
