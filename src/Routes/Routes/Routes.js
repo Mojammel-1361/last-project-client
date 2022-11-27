@@ -12,6 +12,9 @@ import LayoutDashboard from '../../Layout/LayoutDashboard/LayoutDashboard';
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import AdminRoutes from "../AdminRoutes/AdminRoutes";
+import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
+import ManageProduct from "../../Pages/Dashboard/ManageProduct/ManageProduct";
+// import BuyerRoutes from "../BuyerRoutes/BuyerRoutes";
 
 
 
@@ -61,10 +64,26 @@ const router = createBrowserRouter([
         element: <MyProducts></MyProducts>,
       },
       {
+        path: "/dashboard/addProduct",
+        element: (
+          <AdminRoutes>
+            <AddProduct></AddProduct>
+          </AdminRoutes>
+        ),
+      },
+      {
         path: "/dashboard/allUsers",
         element: (
           <AdminRoutes>
             <AllUsers></AllUsers>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/ManageProduct",
+        element: (
+          <AdminRoutes>
+           <ManageProduct></ManageProduct>
           </AdminRoutes>
         ),
       },

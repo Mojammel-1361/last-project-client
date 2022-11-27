@@ -1,7 +1,19 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { useState } from 'react';
+import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 
 const AllUsers = () => {
+  const [deletingUser, setDeletingUser] = useState(null);
+
+  const closeModal = () =>{
+    setDeletingUser(null);
+  }
+
+  const handelDeletUser = user =>{
+    console.log(user)
+
+  }
     const {data: users = []}= useQuery({
         queryKey: ['users'],
         queryFn: async () =>{
@@ -34,15 +46,29 @@ const AllUsers = () => {
                   <td className="text-blue-600">{user.role}</td>
                   <td>
                     {" "}
-                    <button className="btn btn-sm btn-error" type="">
+                    <label
+                      onClick={() => setDeletingUser(user)}
+                      htmlFor="confirmation-modal"
+                      className="btn btn-sm btn-error"
+                    >
                       Delete
-                    </button>{" "}
+                    </label>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        {deletingUser && (
+          <ConfirmationModal
+            name={`Are you sure you want to delete`}
+            role={`if you delete ${deletingUser.name} is a ${deletingUser.role} not data back.`}
+            closeModal={closeModal}
+            modalData ={deletingUser}
+            successButtonName="Delete"
+            successAction={handelDeletUser}
+          ></ConfirmationModal>
+        )}
       </div>
     );
 };

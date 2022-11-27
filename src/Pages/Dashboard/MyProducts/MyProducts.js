@@ -1,12 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider';
+import Lodding from '../../Shared/Lodding/Lodding';
 
 const MyProducts = () => {
   const {user} = useContext(AuthContext);
     const url = `http://localhost:5000/addCards?email=${user?.email}`;
 
-    const { data: addCards =[] } = useQuery({
+    const { data: addCards =[], isLoading } = useQuery({
         queryKey: ['addCards'],
         queryFn: async () =>{
             const res = await fetch(url);
@@ -14,20 +15,23 @@ const MyProducts = () => {
             return data;
         }
     })
+    if(isLoading){
+      return <Lodding></Lodding>;
+    }
 
     return (
       <div>
-        <h1 className="text-3xl mb-5">My Products</h1>
+        <h1 className="text-3xl mb-5">My Orders</h1>
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>
               <tr>
                 <th></th>
                 <th>images</th>
-                <th>Name</th>
                 <th>Product</th>
                 <th>Price</th>
                 <th>Uses</th>
+                <th>mobile</th>
                 <th>Location</th>
               </tr>
             </thead>
@@ -40,10 +44,11 @@ const MyProducts = () => {
                       <img src={addCard.img} alt="" />
                     </div>
                   </th>
-                  <td>{addCard.name}</td>
+                  
                   <td>{addCard.product}</td>
                   <td>{addCard.price}</td>
                   <td>{addCard.use} Year</td>
+                  <td>{addCard.phone}</td>
                   <td>{addCard.location}</td>
                 </tr>
               ))}

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
+
 import CategoryOptions from './CategoryOptions';
 
 const Category = () => {
     const [categorys, SetCategorys] = useState([]);
     const [options, setOptions] = useState(null);
+    
 
     useEffect(() =>{
         fetch("http://localhost:5000/categoryOptions")
           .then((res) => res.json())
           .then((data) => SetCategorys(data));
     },[])
+
+    
 
     return (
       <div className="mt-6">
