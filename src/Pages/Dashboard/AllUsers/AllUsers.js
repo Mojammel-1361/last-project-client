@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 
 const AllUsers = () => {
@@ -10,11 +11,8 @@ const AllUsers = () => {
     setDeletingUser(null);
   }
 
-  const handelDeletUser = user =>{
-    console.log(user)
-
-  }
-    const {data: users = []}= useQuery({
+  
+    const {data: users = [], refetch}= useQuery({
         queryKey: ['users'],
         queryFn: async () =>{
             const res = await fetch("http://localhost:5000/users");
@@ -22,6 +20,25 @@ const AllUsers = () => {
             return data;
         }
     })
+
+    const handelDeletUser = (user) => {
+      fetch(`http://localhost:5000/users/${user._id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(users),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if(data.deletedCount > 0){
+            refetch();
+            toast.success(`User ${user.name} Deleted Done`);
+          }
+          
+        });
+    };
+
     return (
       <div>
         <h1 className="text-3xl mb-5">All Users</h1>
