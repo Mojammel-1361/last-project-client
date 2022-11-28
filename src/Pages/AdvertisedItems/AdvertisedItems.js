@@ -21,7 +21,7 @@ const AdvertisedItems = () => {
     }
     return (
       <div>
-        <h1 className="text-center text-3xl text-primary font-bold mt-7">
+        <h1 className="text-center text-4xl text-primary font-bold mt-8">
           Advertised Items
         </h1>
 

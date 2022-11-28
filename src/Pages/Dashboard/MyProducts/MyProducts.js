@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 import Lodding from '../../Shared/Lodding/Lodding';
 
@@ -38,7 +39,7 @@ const MyProducts = () => {
             </thead>
             <tbody>
               {addCards.map((addCard, i) => (
-                <tr key={i}>
+                <tr key={addCard._id}>
                   <th>{i + 1}</th>
                   <th>
                     <div className="w-24 rounded">
@@ -53,7 +54,9 @@ const MyProducts = () => {
                   <td>{addCard.location}</td>
                   <td>
                     {addCard.price && !addCard.paid && (
-                      <button className="btn btn-accent">pay</button>
+                      <Link to={`/dashboard/payment/${addCard._id}`}>
+                        <button className="btn btn-accent">pay</button>
+                      </Link>
                     )}
                     {addCard.price && addCard.paid && (
                       <span className="text-accent">paid</span>

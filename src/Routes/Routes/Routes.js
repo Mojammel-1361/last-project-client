@@ -15,6 +15,7 @@ import AdminRoutes from "../AdminRoutes/AdminRoutes";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import ManageProduct from "../../Pages/Dashboard/ManageProduct/ManageProduct";
 import SellerRoutes from "../SellerRoutes/SellerRoutes";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
 // import BuyerRoutes from "../BuyerRoutes/BuyerRoutes";
 
 
@@ -87,6 +88,11 @@ const router = createBrowserRouter([
             <ManageProduct></ManageProduct>
           </SellerRoutes>
         ),
+      },
+      {
+        path: "/dashboard/payment/:id",
+        element: <Payment></Payment>,
+        loader: ({ params }) => fetch(`http://localhost:5000/addCards/${params.id}`),
       },
     ],
   },
