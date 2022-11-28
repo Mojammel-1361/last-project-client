@@ -16,7 +16,7 @@ const CategoryCard = ({ detail, setItems }) => {
             htmlFor="product-views"
             className="btn btn-primary btn-sm"
           >
-            More details
+            Booking
           </label>
         </div>
       </div>

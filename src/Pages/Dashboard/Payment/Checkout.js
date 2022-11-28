@@ -11,13 +11,16 @@ const Checkout = ({ addCard }) => {
   const elements = useElements();
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ price }),
-    })
+    fetch(
+      "https://resale-market-server-green.vercel.app/create-payment-intent",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ price }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, [price]);
@@ -42,8 +45,8 @@ const Checkout = ({ addCard }) => {
     } else {
       setCardError("");
     }
-    setSuccess('');
-    
+    setSuccess("");
+
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -59,14 +62,10 @@ const Checkout = ({ addCard }) => {
       return;
     }
 
-    if (paymentIntent.status === "succeeded"){
+    if (paymentIntent.status === "succeeded") {
       setSuccess("congrats! your payment completed");
       setTransactionId(paymentIntent.id);
     }
-    
-
-
-
   };
   return (
     <div>

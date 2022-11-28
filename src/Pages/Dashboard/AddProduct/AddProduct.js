@@ -35,7 +35,7 @@ const AddProduct = () => {
           condition: data.condition,
           image: imgData.data.url,
         }
-        fetch("http://localhost:5000/products", {
+        fetch("https://resale-market-server-green.vercel.app/products", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -45,7 +45,7 @@ const AddProduct = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            
+
             toast.success("product  Uploaded ");
             navigate("/dashboard/ManageProduct");
           });

@@ -9,17 +9,17 @@ const CategoryOptions = ({ category }) => {
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={images} alt="" className="h-28 w-34 rounded-xl" />
+        <img src={images} alt="" className="h-32 w-34 rounded-xl" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
+        <h2 className="card-title">Brand: {name}</h2>
 
         <div className="card-actions justify-end">
           <Link
             to={`/categoryItems/${_id}`}
-            className="btn btn-primary btn-sm"
+            className="btn btn-primary btn-outline btn-sm"
           >
-            {name}
+            more
           </Link>
         </div>
       </div>

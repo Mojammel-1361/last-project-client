@@ -1,10 +1,11 @@
-# Getting Started with Create React App
+# Laptop Resale Market
+All kind of use laptop sell hear.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Admin
 
-## Available Scripts
+adminEmail: <mojammel127@gmail.com>
 
-In the project directory, you can run:
+adminPassword: <123456>
 
 ### `npm start`
 

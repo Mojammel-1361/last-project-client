@@ -1,4 +1,4 @@
-import { createBrowserRouter }  from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
@@ -8,7 +8,7 @@ import Login from "../../Pages/Login/Login";
 import SingUp from "../../Pages/SingUp/SingUp";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import CategoryItems from "../../Pages/CategoryItems/CategoryItems";
-import LayoutDashboard from '../../Layout/LayoutDashboard/LayoutDashboard';
+import LayoutDashboard from "../../Layout/LayoutDashboard/LayoutDashboard";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import AdminRoutes from "../AdminRoutes/AdminRoutes";
@@ -17,8 +17,6 @@ import ManageProduct from "../../Pages/Dashboard/ManageProduct/ManageProduct";
 import SellerRoutes from "../SellerRoutes/SellerRoutes";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
 // import BuyerRoutes from "../BuyerRoutes/BuyerRoutes";
-
-
 
 const router = createBrowserRouter([
   {
@@ -45,7 +43,9 @@ const router = createBrowserRouter([
         path: "/categoryItems/:id",
         element: <CategoryItems></CategoryItems>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categoryOptions/${params.id}`),
+          fetch(
+            `https://resale-market-server-green.vercel.app/categoryOptions/${params.id}`
+          ),
       },
     ],
   },
@@ -92,7 +92,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/payment/:id",
         element: <Payment></Payment>,
-        loader: ({ params }) => fetch(`http://localhost:5000/addCards/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://resale-market-server-green.vercel.app/addCards/${params.id}`
+          ),
       },
     ],
   },
@@ -102,4 +105,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;;
+export default router;
