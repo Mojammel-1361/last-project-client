@@ -1,15 +1,18 @@
 # Laptop Resale Market
 All kind of use laptop sell hear.
 
-[Live Link](https://facebook.github.io/create-react-app/docs/getting-started)
+[Live Link](https://market-e8438.web.app)
+
 [server Link](https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-Mojammel-1361)
 
 ## Admin
 admin Email: <mojammel127@gmail.com>
+
 admin Password: 123456
 
-## sellers 
+## sellers if you need 
 Email: <sehib93836@lance7.com>
+
 Password: 123456
 
 
