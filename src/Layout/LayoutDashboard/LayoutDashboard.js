@@ -39,9 +39,9 @@ const LayoutDashboard = () => {
               {isSeller && (
                 <>
                   <li>
-                    <Link to="/dashboard/ManageProduct">Manage Product</Link>
+                    <Link to="/dashboard/ManageProduct">Add Product List</Link>
                     <Link to="/dashboard/addProduct">
-                      Seller Upload Product
+                      Add Products
                     </Link>
                   </li>
                 </>

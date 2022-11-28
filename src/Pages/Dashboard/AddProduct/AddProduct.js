@@ -54,7 +54,7 @@ const AddProduct = () => {
   }
     return (
       <div>
-        <h1 className="text-3xl">Upload Product</h1>
+        <h1 className="text-3xl">Add Product</h1>
         <form className="w-96 p-7" onSubmit={handleSubmit(handelAddPorduct)}>
           <div className="form-control w-full">
             <label className="label">
