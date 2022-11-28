@@ -1,4 +1,5 @@
 import React from 'react';
+import PrivateRoutes from '../../Routes/PrivateRoutes/PrivateRoutes';
 
 const CategoryCard = ({ detail, setItems }) => {
   const { product, img, price } = detail;
@@ -11,13 +12,15 @@ const CategoryCard = ({ detail, setItems }) => {
         <h2 className="card-title">{product}</h2>
         <p>Price: {price} Tk</p>
         <div className="card-actions justify-end">
-          <label
-            onClick={() => setItems(detail)}
-            htmlFor="product-views"
-            className="btn btn-primary btn-sm"
-          >
-            Booking
-          </label>
+          <PrivateRoutes>
+            <label
+              onClick={() => setItems(detail)}
+              htmlFor="product-views"
+              className="btn btn-primary btn-sm"
+            >
+              Booking
+            </label>
+          </PrivateRoutes>
         </div>
       </div>
     </div>
