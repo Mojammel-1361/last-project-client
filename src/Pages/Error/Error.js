@@ -4,6 +4,7 @@ const Error = () => {
     return (
         <div>
             <img src={img} alt=""/>
+            
         </div>
     );
 };

@@ -114,7 +114,7 @@ const Login = () => {
             onClick={handleGoogle}
             className="btn btn-outline btn-success w-full"
           >
-            Login with Google
+            Login With Google
           </button>
         </div>
       </div>

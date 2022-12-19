@@ -29,9 +29,9 @@ const ManageProduct = () => {
               <th>Images</th>
               <th>Name & Model</th>
               <th>Price</th>
-              <th>Product Details some Speciation</th>
+              <th>Product Details Some Speciation</th>
               <th>Location</th>
-              <th>post for Adds</th>
+              <th>Post for Address</th>
             </tr>
           </thead>
           <tbody>

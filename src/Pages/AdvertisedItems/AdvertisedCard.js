@@ -2,6 +2,7 @@ import React from 'react';
 
 const AdvertisedCard = ({ advertised }) => {
     const { name, details, image, condition, location, price } = advertised;
+    
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl">

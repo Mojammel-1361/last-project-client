@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
-
 const CategoryOptions = ({ category }) => {
     const { name, images, _id } = category;
   return (

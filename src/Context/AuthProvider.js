@@ -30,7 +30,6 @@ const AuthProvider = ({children}) => {
      setLoading(true);
     return signOut(auth);
    }
-
     const createUser = (email, password) => {
       setLoading(true);
       return createUserWithEmailAndPassword(auth, email, password)
@@ -39,7 +38,6 @@ const AuthProvider = ({children}) => {
     const updateUser = (userInfo) => {
       return updateProfile(auth.currentUser, userInfo);
     };
-    
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (createUser) => {
         console.log('user observing')
