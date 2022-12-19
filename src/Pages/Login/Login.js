@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 
 
@@ -28,6 +29,7 @@ const Login = () => {
             console.log(user);
             navigate('/')
             // setLoginUserEmail(user.email);
+            toast.success("Login successfully");
           })
           .catch((err) => console.error(err));
       };
@@ -40,6 +42,7 @@ const Login = () => {
            const user = result.user;
            console.log(user);
            navigate(from, {replace: true})
+           toast.success("Login successfully");
          })
          .catch((error) => {
           
